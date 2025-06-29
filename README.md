@@ -41,5 +41,16 @@ React Todo list is a simple and interactive To-Do List application built with Re
 - `src/styles.css` - App styling
 - `doc/screenshot.png` - App screenshot
 
----
-Enjoy using ReactMe! 
+## Component Composition
+
+This project demonstrates React's component composition by splitting the UI into reusable components:
+
+- **App Component (`App.jsx`)**: This is the main component that manages the application's state, including the list of tasks and the current input value. It renders the input field, the add button, and the list of tasks.
+- **List Component (`List.jsx`)**: This component is responsible for rendering individual to-do items. It receives the task text as a prop from the App component and manages its own local state to toggle the completed (line-through) style when clicked.
+
+**How it works:**
+- The `App` component maintains an array of tasks in its state. When a new task is added, it updates this array.
+- For each task in the array, the `App` component renders a `List` component, passing the task text as a prop.
+- The `List` component displays the task and allows the user to mark it as done by clicking on it, using its own internal state for the visual effect.
+
+This approach keeps the code modular, readable, and easy to maintain, as each component has a clear responsibility.
